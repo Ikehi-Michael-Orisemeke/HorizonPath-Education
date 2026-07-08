@@ -28,8 +28,7 @@ export function SectionHeading({
       {label && (
         <p
           className={cn(
-            "mb-3 text-xs font-extrabold uppercase tracking-[0.2em]",
-            light ? "text-teal" : "text-teal"
+            "mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.15em] text-teal",
           )}
         >
           {label}
@@ -37,7 +36,7 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          "font-display text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-balance",
+          "font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl text-balance",
           light ? "text-white" : "text-navy"
         )}
       >

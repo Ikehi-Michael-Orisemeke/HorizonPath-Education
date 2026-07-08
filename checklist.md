@@ -1,22 +1,8 @@
-# HorizonPath Education — Visual Upgrade Checklist
+# HorizonPath Education — Brand Update Checklist
 
-## Motion & Background System
-- [x] Aurora + grid background components
-- [x] Text reveal, parallax, magnetic, spotlight utilities
-- [x] Count-up stats, sticky scroll reveal
-
-## Home Page
-- [x] Immersive parallax hero with scroll-linked layers
-- [x] Destination parallax scroll section
-- [x] Upgraded trust bar, marquee, cards, CTA
-
-## Inner Pages
-- [x] Page heroes with parallax
-- [x] Process sticky scroll timeline
-- [x] Destinations spotlight + tilt cards
-- [x] Services bento grid
-
-## Polish
-- [x] Magnetic cursor upgrade
-- [x] Global CSS (noise, shadows, aurora, marquee masks)
+- [x] Official palette: Deep Blue #0F3D6E, Teal #0FA3A6, Silver #C0C7D1, Charcoal #2B3440
+- [x] Typography: Newsreader (display) + Instrument Sans (UI/body)
+- [x] Removed interim MOE colours (gold, old navy/teal)
+- [x] Teal reserved for actions and emphasis only
+- [x] Logo minimum 130px width
 - [x] Build passes

@@ -14,8 +14,8 @@ export function GridBackground({ className }: { className?: string }) {
         className="absolute inset-0 opacity-[0.35]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(10,40,100,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(10,40,100,0.06) 1px, transparent 1px)
+            linear-gradient(rgba(15, 61, 110, 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(15, 61, 110, 0.06) 1px, transparent 1px)
           `,
           backgroundSize: "64px 64px",
         }}

@@ -13,7 +13,7 @@ type SpotlightCardProps = {
 export function SpotlightCard({
   children,
   className,
-  spotlightColor = "rgba(0, 163, 163, 0.12)",
+  spotlightColor = "rgba(15, 163, 166, 0.12)",
 }: SpotlightCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);

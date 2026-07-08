@@ -66,17 +66,17 @@ export function HeroSection() {
         style={{ y: heroY, scale: pathScale, rotate: pathRotate }}
       >
         <svg viewBox="0 0 200 200" className="h-[700px] w-[700px]" fill="none">
-          <rect x="20" y="20" width="24" height="160" rx="6" fill="#0A2864" />
-          <rect x="156" y="20" width="24" height="160" rx="6" fill="#0A2864" />
+          <rect x="20" y="20" width="24" height="160" rx="6" fill="#0F3D6E" />
+          <rect x="156" y="20" width="24" height="160" rx="6" fill="#0F3D6E" />
           <path
             ref={pathRef}
             d={PATH_D}
-            stroke="#00A3A3"
+            stroke="#0F3D6E"
             strokeWidth="14"
             strokeLinecap="round"
             fill="none"
           />
-          <circle cx="170" cy="30" r="12" fill="#00A3A3" />
+          <circle cx="170" cy="30" r="12" fill="#0FA3A6" />
         </svg>
       </motion.div>
 
@@ -118,7 +118,7 @@ export function HeroSection() {
         className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-24 pt-32 lg:px-8"
       >
         <LineReveal delay={0.1}>
-          <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-teal">
+          <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-teal">
             {homeContent.hero.eyebrow}
           </p>
         </LineReveal>
@@ -128,7 +128,7 @@ export function HeroSection() {
             {homeContent.hero.headline.split(" ").map((word, i) => (
               <motion.span
                 key={word}
-                className="mr-[0.3em] inline-block font-display text-5xl font-bold leading-[1.05] tracking-tight text-navy sm:text-6xl lg:text-7xl xl:text-8xl"
+                className="mr-[0.3em] inline-block font-display text-5xl font-semibold leading-[1.05] tracking-tight text-navy sm:text-6xl lg:text-7xl xl:text-8xl"
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
@@ -145,7 +145,7 @@ export function HeroSection() {
             {homeContent.hero.headlineAccent.split(" ").map((word, i) => (
               <motion.span
                 key={word}
-                className="mr-[0.3em] inline-block bg-gradient-to-r from-teal via-teal to-[#00cfcf] bg-clip-text font-display text-5xl font-bold leading-[1.05] tracking-tight text-transparent sm:text-6xl lg:text-7xl xl:text-8xl"
+                className="mr-[0.3em] inline-block bg-gradient-to-r from-teal to-teal bg-clip-text font-display text-5xl font-semibold leading-[1.05] tracking-tight text-transparent sm:text-6xl lg:text-7xl xl:text-8xl"
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{

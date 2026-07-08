@@ -1,33 +1,33 @@
-@import url("https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700,700-i&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
-  --foreground: #0a2864;
+  --foreground: #0f3d6e;
   --card: #ffffff;
-  --card-foreground: #0a2864;
+  --card-foreground: #0f3d6e;
   --popover: #ffffff;
-  --popover-foreground: #0a2864;
-  --primary: #0a2864;
+  --popover-foreground: #0f3d6e;
+  --primary: #0f3d6e;
   --primary-foreground: #ffffff;
-  --secondary: #f0f4fa;
-  --secondary-foreground: #0a2864;
-  --muted: #f4f6f9;
-  --muted-foreground: #5a6b8a;
-  --accent: #00a3a3;
+  --secondary: #f4f5f7;
+  --secondary-foreground: #0f3d6e;
+  --muted: #f0f2f5;
+  --muted-foreground: #2b3440;
+  --accent: #0fa3a6;
   --accent-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #00a3a3;
+  --border: #c0c7d1;
+  --input: #c0c7d1;
+  --ring: #0fa3a6;
   --radius: 0.75rem;
 
-  --navy: #0a2864;
-  --deep: #001f6b;
-  --teal: #00a3a3;
-  --silver: #b8bcc4;
-  --gold: #c9a24b;
+  /* HorizonPath brand palette */
+  --navy: #0f3d6e;
+  --deep: #0f3d6e;
+  --teal: #0fa3a6;
+  --silver: #c0c7d1;
+  --charcoal: #2b3440;
 }
 
 @theme inline {
@@ -54,9 +54,9 @@
   --color-deep: var(--deep);
   --color-teal: var(--teal);
   --color-silver: var(--silver);
-  --color-gold: var(--gold);
-  --font-sans: var(--font-manrope);
-  --font-display: "Zodiak", Georgia, serif;
+  --color-charcoal: var(--charcoal);
+  --font-sans: var(--font-instrument-sans);
+  --font-display: var(--font-newsreader);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -90,8 +90,9 @@ html.lenis body {
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-manrope), system-ui, sans-serif;
+  color: var(--charcoal);
+  font-family: var(--font-instrument-sans), system-ui, sans-serif;
+  line-height: 1.5;
   cursor: none;
 }
 
@@ -113,15 +114,15 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-display);
+  font-family: var(--font-newsreader), Georgia, serif;
 }
 
 .gradient-mesh {
   background:
-    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(0, 163, 163, 0.15), transparent),
-    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(10, 40, 100, 0.12), transparent),
-    radial-gradient(ellipse 50% 40% at 50% 80%, rgba(201, 162, 75, 0.08), transparent),
-    linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f0f4fa 100%);
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(15, 163, 166, 0.12), transparent),
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(15, 61, 110, 0.1), transparent),
+    radial-gradient(ellipse 50% 40% at 50% 80%, rgba(192, 199, 209, 0.2), transparent),
+    linear-gradient(180deg, #f8f9fb 0%, #ffffff 50%, #f0f2f5 100%);
 }
 
 /* Aurora animated blobs */
@@ -136,7 +137,7 @@ body {
 .aurora-blob-1 {
   width: 600px;
   height: 600px;
-  background: rgba(0, 163, 163, 0.25);
+  background: rgba(15, 163, 166, 0.2);
   top: -10%;
   left: -5%;
 }
@@ -144,7 +145,7 @@ body {
 .aurora-blob-2 {
   width: 500px;
   height: 500px;
-  background: rgba(10, 40, 100, 0.2);
+  background: rgba(15, 61, 110, 0.15);
   top: 20%;
   right: -10%;
   animation-delay: -4s;
@@ -153,7 +154,7 @@ body {
 .aurora-blob-3 {
   width: 400px;
   height: 400px;
-  background: rgba(201, 162, 75, 0.12);
+  background: rgba(192, 199, 209, 0.25);
   bottom: 10%;
   left: 30%;
   animation-delay: -8s;
@@ -181,9 +182,9 @@ body {
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* Gradient text utility */
+/* Gradient text — teal only, per brand rules */
 .text-gradient-teal {
-  background: linear-gradient(135deg, #00a3a3 0%, #00cfcf 50%, #00a3a3 100%);
+  background: linear-gradient(135deg, #0fa3a6 0%, #0fa3a6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -192,7 +193,7 @@ body {
 /* Section divider */
 .section-divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(10, 40, 100, 0.1), transparent);
+  background: linear-gradient(to right, transparent, rgba(15, 61, 110, 0.1), transparent);
 }
 
 .glass {

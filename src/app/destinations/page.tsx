@@ -45,6 +45,7 @@ export default function DestinationsPage() {
                         "relative h-52 bg-gradient-to-br p-8",
                         headerGradients[dest.id]
                       )}
+                      data-cursor-dark
                     >
                       <div className="absolute inset-0 opacity-30">
                         <div

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Newsreader, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { brand } from "@/lib/brand";
 import { Header } from "@/components/layout/header";
@@ -8,10 +8,17 @@ import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { CustomCursor } from "@/components/motion/custom-cursor";
 import { Providers } from "@/components/layout/providers";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+});
+
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -55,7 +62,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${newsreader.variable} ${instrumentSans.variable} h-full scroll-smooth`}
+    >
       <body className="min-h-full flex flex-col antialiased">
         <Providers>
           <SmoothScroll>

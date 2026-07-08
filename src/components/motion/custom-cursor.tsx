@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { isOnDarkSurface } from "@/lib/cursor-theme";
 
 export function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isAccent, setIsAccent] = useState(false);
+  const [onDark, setOnDark] = useState(false);
 
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
@@ -43,16 +45,37 @@ export function CustomCursor() {
       setIsVisible(true);
       setIsHovering(!!magnetic);
       setIsAccent(!!accent);
+      setOnDark(isOnDarkSurface(target));
     };
 
     window.addEventListener("mousemove", moveCursor);
-    document.body.addEventListener("mouseleave", () => setIsVisible(false));
-    document.body.addEventListener("mouseenter", () => setIsVisible(true));
+    document.documentElement.addEventListener("mouseleave", () =>
+      setIsVisible(false)
+    );
+    document.documentElement.addEventListener("mouseenter", () =>
+      setIsVisible(true)
+    );
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
     };
   }, [mouseX, mouseY]);
+
+  const dotColor = onDark
+    ? isAccent
+      ? "#0FA3A6"
+      : "#FFFFFF"
+    : isAccent
+      ? "#0FA3A6"
+      : "#0F3D6E";
+
+  const ringColor = onDark
+    ? isAccent
+      ? "rgba(15, 163, 166, 0.85)"
+      : "rgba(255, 255, 255, 0.5)"
+    : isAccent
+      ? "rgba(15, 163, 166, 0.5)"
+      : "rgba(15, 61, 110, 0.25)";
 
   return (
     <>
@@ -63,11 +86,12 @@ export function CustomCursor() {
         transition={{ duration: 0.12 }}
       >
         <div
-          className="-translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="-translate-x-1/2 -translate-y-1/2 rounded-full shadow-sm"
           style={{
             width: isAccent ? 10 : 7,
             height: isAccent ? 10 : 7,
-            backgroundColor: isAccent ? "#00A3A3" : "#0A2864",
+            backgroundColor: dotColor,
+            boxShadow: onDark ? "0 0 6px rgba(0,0,0,0.25)" : undefined,
           }}
         />
       </motion.div>
@@ -82,9 +106,7 @@ export function CustomCursor() {
           style={{
             width: 44,
             height: 44,
-            borderColor: isAccent
-              ? "rgba(0, 163, 163, 0.5)"
-              : "rgba(10, 40, 100, 0.2)",
+            borderColor: ringColor,
           }}
         />
       </motion.div>

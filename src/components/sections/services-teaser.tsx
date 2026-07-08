@@ -36,7 +36,7 @@ export function ServicesTeaser() {
   const { servicesTeaser } = homeContent;
 
   return (
-    <section className="relative overflow-hidden bg-navy py-28 lg:py-36">
+    <section className="relative overflow-hidden bg-navy py-28 lg:py-36" data-cursor-dark>
       <div className="absolute inset-0 opacity-10">
         <div
           className="h-full w-full"

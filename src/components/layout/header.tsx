@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { navLinks } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/layout/logo";
 import {
   Sheet,
   SheetContent,
@@ -38,16 +38,7 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
-        <Link href="/" className="relative z-10 flex items-center" data-cursor-magnetic>
-          <Image
-            src="/brand/logo.jpeg"
-            alt="HorizonPath Education"
-            width={200}
-            height={54}
-            className="h-10 w-auto sm:h-12"
-            priority
-          />
-        </Link>
+        <Logo priority />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => {

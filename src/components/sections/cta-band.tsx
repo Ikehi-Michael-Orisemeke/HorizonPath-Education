@@ -7,9 +7,19 @@ import { homeContent } from "@/content/home";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 
-export function CtaBand() {
-  const { cta } = homeContent;
+type CtaBandProps = {
+  title?: string;
+  description?: string;
+  button?: string;
+  href?: string;
+};
 
+export function CtaBand({
+  title = homeContent.cta.title,
+  description = homeContent.cta.description,
+  button = homeContent.cta.button,
+  href = "/contact",
+}: CtaBandProps) {
   return (
     <section className="relative overflow-hidden py-28 lg:py-36">
       <div className="absolute inset-0 gradient-mesh" />
@@ -23,11 +33,11 @@ export function CtaBand() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-4xl font-bold text-navy sm:text-5xl lg:text-6xl text-balance">
-              {cta.title}
+            <h2 className="font-display text-4xl font-semibold text-navy sm:text-5xl lg:text-6xl text-balance">
+              {title}
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
-              {cta.description}
+              {description}
             </p>
             <Button
               asChild
@@ -36,8 +46,8 @@ export function CtaBand() {
               className="mt-10 group shadow-xl shadow-teal/20"
               data-cursor-accent
             >
-              <Link href="/contact">
-                {cta.button}
+              <Link href={href}>
+                {button}
                 <ArrowRight className="ml-1 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

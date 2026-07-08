@@ -74,7 +74,7 @@ export function DestinationsParallax() {
   const secondRow = destinationsContent.destinations.slice(2, 4);
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-navy py-32">
+    <section ref={ref} className="relative overflow-hidden bg-navy py-32" data-cursor-dark>
       <div className="absolute inset-0 opacity-20">
         <GridPattern />
       </div>
