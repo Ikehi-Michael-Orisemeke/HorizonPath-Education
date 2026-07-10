@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { contactContent } from "@/content/contact";
-import { PageHero } from "@/components/sections/page-hero";
+import { ContactHero } from "@/components/sections/contact-hero";
 import { ContactForms } from "@/components/sections/contact-forms";
 import { Reveal } from "@/components/motion/reveal";
 import { IcefBadge } from "@/components/sections/icef-badge";
@@ -12,11 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const { hero } = contactContent;
-
   return (
     <>
-      <PageHero label={hero.label} title={hero.title} description={hero.description} />
+      <ContactHero />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-3 lg:px-8">

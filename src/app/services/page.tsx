@@ -12,7 +12,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { servicesContent } from "@/content/services";
-import { PageHero } from "@/components/sections/page-hero";
+import { ServicesHero } from "@/components/sections/services-hero";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { CtaBand } from "@/components/sections/cta-band";
 import { SpotlightCard } from "@/components/motion/spotlight-card";
@@ -42,11 +42,11 @@ const bentoLayout: Record<string, string> = {
 };
 
 export default function ServicesPage() {
-  const { hero, services } = servicesContent;
+  const { services } = servicesContent;
 
   return (
     <>
-      <PageHero label={hero.label} title={hero.title} description={hero.description} />
+      <ServicesHero />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

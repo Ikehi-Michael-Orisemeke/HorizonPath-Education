@@ -1,14 +1,14 @@
 import { processContent } from "@/content/process";
-import { PageHero } from "@/components/sections/page-hero";
+import { ProcessHero } from "@/components/sections/process-hero";
 import { StickyScrollReveal } from "@/components/motion/sticky-scroll-reveal";
 import { CtaBand } from "@/components/sections/cta-band";
 
 export default function ProcessPage() {
-  const { hero, cta, steps } = processContent;
+  const { cta, steps } = processContent;
 
   return (
     <>
-      <PageHero label={hero.label} title={hero.title} description={hero.description} />
+      <ProcessHero />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

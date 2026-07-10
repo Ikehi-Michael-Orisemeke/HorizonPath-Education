@@ -1,23 +1,9 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import { destinationsContent } from "@/content/destinations";
-import { cn } from "@/lib/utils";
-
-const flagEmoji: Record<string, string> = {
-  uk: "🇬🇧",
-  canada: "🇨🇦",
-  usa: "🇺🇸",
-  europe: "🇪🇺",
-};
-
-const gradients: Record<string, string> = {
-  uk: "from-blue-900/90 to-navy",
-  canada: "from-red-900/80 to-navy",
-  usa: "from-indigo-900/80 to-deep",
-  europe: "from-teal-900/70 to-navy",
-};
 
 function DestinationCard({
   dest,
@@ -32,28 +18,19 @@ function DestinationCard({
       className="group relative h-72 w-[22rem] shrink-0 overflow-hidden rounded-2xl shadow-2xl shadow-navy/20"
       data-cursor-magnetic
     >
-      <div
-        className={cn(
-          "absolute inset-0 bg-gradient-to-br",
-          gradients[dest.id] ?? "from-navy to-deep"
-        )}
+      <Image
+        src={dest.image}
+        alt={dest.name}
+        fill
+        sizes="352px"
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 opacity-20">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `radial-gradient(circle at 30% 30%, rgba(0,163,163,0.4), transparent 60%)`,
-          }}
-        />
-      </div>
-      <div className="relative flex h-full flex-col justify-between p-6">
-        <span className="text-4xl">{flagEmoji[dest.id]}</span>
-        <div>
-          <h3 className="font-display text-2xl font-bold text-white">
-            {dest.name}
-          </h3>
-          <p className="mt-1 text-sm font-semibold text-teal">{dest.tagline}</p>
-        </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/45 to-navy/15" />
+      <div className="relative flex h-full flex-col justify-end p-6">
+        <h3 className="font-display text-2xl font-bold text-white">
+          {dest.name}
+        </h3>
+        <p className="mt-1 text-sm font-semibold text-teal">{dest.tagline}</p>
       </div>
       <div className="absolute inset-0 bg-teal/0 transition-colors duration-500 group-hover:bg-teal/10" />
     </motion.div>

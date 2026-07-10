@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { successStoriesContent } from "@/content/success-stories";
-import { PageHero } from "@/components/sections/page-hero";
+import { SuccessStoriesHero } from "@/components/sections/success-stories-hero";
 import { TestimonialCarousel } from "@/components/sections/testimonial-carousel";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Reveal } from "@/components/motion/reveal";
@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 };
 
 export default function SuccessStoriesPage() {
-  const { hero, caseStudies } = successStoriesContent;
+  const { caseStudies } = successStoriesContent;
 
   return (
     <>
-      <PageHero label={hero.label} title={hero.title} description={hero.description} />
+      <SuccessStoriesHero />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">

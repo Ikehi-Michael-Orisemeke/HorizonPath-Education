@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-const LOGO_SRC = "/Horizonpath.svg";
+const LOGO_SRC = "/brand/horizonpath.svg";
 
 type LogoProps = {
   className?: string;
@@ -20,9 +20,9 @@ export function Logo({ className, priority = false }: LogoProps) {
       <Image
         src={LOGO_SRC}
         alt="HorizonPath Education"
-        width={200}
-        height={55}
-        className="h-11 w-auto min-w-[130px] sm:h-12"
+        width={130}
+        height={130}
+        className="h-14 w-14 sm:h-16 sm:w-16"
         unoptimized
         priority={priority}
       />

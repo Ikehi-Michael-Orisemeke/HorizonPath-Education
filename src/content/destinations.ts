@@ -3,6 +3,7 @@ export type Destination = {
   name: string;
   tagline: string;
   description: string;
+  image: string;
   highlights: string[];
   universities: string[];
 };
@@ -21,6 +22,7 @@ export const destinationsContent = {
       tagline: "Centuries of academic excellence",
       description:
         "Home to Oxford, Cambridge, and the Russell Group — the UK offers rigorous degrees, shorter programme lengths, and a globally respected qualification framework that opens doors worldwide.",
+      image: "/stock/uk.jpg",
       highlights: [
         "Russell Group & post-1992 universities",
         "One-year master's programmes",
@@ -39,6 +41,7 @@ export const destinationsContent = {
       tagline: "Quality education, welcoming communities",
       description:
         "Canada combines world-ranked research universities with a multicultural society and clear post-study work pathways — an increasingly popular choice for international students seeking long-term opportunity.",
+      image: "/stock/canada.jpg",
       highlights: [
         "Post-graduation work permits",
         "Affordable tuition vs. US/UK peers",
@@ -57,6 +60,7 @@ export const destinationsContent = {
       tagline: "Innovation at the world's top institutions",
       description:
         "From the Ivy League to leading state universities, the US offers unparalleled breadth of programmes, cutting-edge research, and a campus culture that shapes leaders across every industry.",
+      image: "/stock/usa.jpg",
       highlights: [
         "Liberal arts & specialised majors",
         "Generous scholarship opportunities",
@@ -75,6 +79,7 @@ export const destinationsContent = {
       tagline: "Diverse programmes, borderless learning",
       description:
         "From the Netherlands and Germany to Ireland and beyond — Europe offers affordable or tuition-free options, English-taught programmes, and the chance to study at the heart of global culture and industry.",
+      image: "/stock/europe.jpg",
       highlights: [
         "English-taught bachelor's & master's",
         "Affordable tuition in many countries",

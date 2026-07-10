@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <path d="M60 8 L108 32 V72 C108 92 86 108 60 112 C34 108 12 92 12 72 V32 Z" fill="#0F3D6E"/>
+  <path d="M60 18 L98 38 V70 C98 86 80 98 60 102 C40 98 22 86 22 70 V38 Z" fill="#FFFFFF"/>
+  <path d="M60 28 L88 44 V68 C88 80 74 90 60 94 C46 90 32 80 32 68 V44 Z" fill="#0F3D6E"/>
+  <text x="60" y="72" text-anchor="middle" fill="#FFFFFF" font-family="Georgia, serif" font-size="22" font-weight="700">TCD</text>
+</svg>

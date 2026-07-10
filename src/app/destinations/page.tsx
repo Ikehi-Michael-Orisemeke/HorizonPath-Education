@@ -1,37 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { destinationsContent } from "@/content/destinations";
-import { PageHero } from "@/components/sections/page-hero";
+import { DestinationsHero } from "@/components/sections/destinations-hero";
 import { CtaBand } from "@/components/sections/cta-band";
 import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { TiltCard } from "@/components/motion/tilt-card";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/reveal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-
-const flagEmoji: Record<string, string> = {
-  uk: "🇬🇧",
-  canada: "🇨🇦",
-  usa: "🇺🇸",
-  europe: "🇪🇺",
-};
-
-const headerGradients: Record<string, string> = {
-  uk: "from-blue-800 via-navy to-deep",
-  canada: "from-red-900 via-navy to-deep",
-  usa: "from-indigo-900 via-navy to-deep",
-  europe: "from-teal-800 via-navy to-deep",
-};
 
 export default function DestinationsPage() {
-  const { hero, destinations } = destinationsContent;
+  const { destinations } = destinationsContent;
 
   return (
     <>
-      <PageHero label={hero.label} title={hero.title} description={hero.description} />
+      <DestinationsHero />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -39,29 +25,24 @@ export default function DestinationsPage() {
             {destinations.map((dest) => (
               <StaggerItem key={dest.id}>
                 <TiltCard>
-                  <SpotlightCard className="overflow-hidden p-0" data-cursor-magnetic>
-                    <div
-                      className={cn(
-                        "relative h-52 bg-gradient-to-br p-8",
-                        headerGradients[dest.id]
-                      )}
-                      data-cursor-dark
-                    >
-                      <div className="absolute inset-0 opacity-30">
-                        <div
-                          className="h-full w-full"
-                          style={{
-                            backgroundImage: `radial-gradient(circle at 70% 30%, rgba(0,163,163,0.5), transparent 60%)`,
-                          }}
-                        />
+                  <SpotlightCard className="overflow-hidden p-0">
+                    <div className="relative h-56" data-cursor-dark>
+                      <Image
+                        src={dest.image}
+                        alt={dest.name}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-navy/10" />
+                      <div className="absolute inset-x-0 bottom-0 p-8">
+                        <h2 className="font-display text-3xl font-bold text-white">
+                          {dest.name}
+                        </h2>
+                        <p className="mt-1 text-sm font-semibold text-teal">
+                          {dest.tagline}
+                        </p>
                       </div>
-                      <span className="relative text-5xl">{flagEmoji[dest.id]}</span>
-                      <h2 className="relative mt-4 font-display text-3xl font-bold text-white">
-                        {dest.name}
-                      </h2>
-                      <p className="relative mt-1 text-sm font-semibold text-teal">
-                        {dest.tagline}
-                      </p>
                     </div>
                     <div className="flex flex-col p-8">
                       <p className="leading-relaxed text-muted-foreground">

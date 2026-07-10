@@ -1,28 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { destinationsContent } from "@/content/destinations";
 import { homeContent } from "@/content/home";
 import { SectionHeading } from "@/components/sections/section-heading";
-import { SpotlightCard } from "@/components/motion/spotlight-card";
-import { TiltCard } from "@/components/motion/tilt-card";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
-
-const flagEmoji: Record<string, string> = {
-  uk: "🇬🇧",
-  canada: "🇨🇦",
-  usa: "🇺🇸",
-  europe: "🇪🇺",
-};
-
-const accentBorders: Record<string, string> = {
-  uk: "group-hover:border-blue-400/30",
-  canada: "group-hover:border-red-400/30",
-  usa: "group-hover:border-indigo-400/30",
-  europe: "group-hover:border-teal/30",
-};
 
 export function DestinationsPreview() {
   const { destinationsPreview } = homeContent;
@@ -41,29 +26,39 @@ export function DestinationsPreview() {
         <StaggerContainer className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {destinationsContent.destinations.map((dest) => (
             <StaggerItem key={dest.id}>
-              <TiltCard>
-                <Link href="/destinations" className="block h-full">
-                  <SpotlightCard
-                    className={`h-full p-6 ${accentBorders[dest.id] ?? ""}`}
-                    spotlightColor="rgba(0, 163, 163, 0.15)"
-                  >
-                    <span className="text-4xl">{flagEmoji[dest.id]}</span>
-                    <h3 className="mt-5 font-display text-xl font-bold text-navy">
+              <Link
+                href="/destinations"
+                className="group block h-full overflow-hidden rounded-2xl border border-border/50 bg-white shadow-sm transition-shadow hover:shadow-lg"
+                data-cursor-magnetic
+              >
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <Image
+                    src={dest.image}
+                    alt={dest.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/25 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <h3 className="font-display text-xl font-bold text-white">
                       {dest.name}
                     </h3>
-                    <p className="mt-2 text-sm font-semibold text-teal">
+                    <p className="mt-1 text-sm font-semibold text-teal">
                       {dest.tagline}
                     </p>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
-                      {dest.description}
-                    </p>
-                    <span className="mt-5 inline-flex items-center text-sm font-semibold text-navy transition-colors group-hover:text-teal">
-                      Learn more
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </SpotlightCard>
-                </Link>
-              </TiltCard>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <p className="text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                    {dest.description}
+                  </p>
+                  <span className="mt-4 inline-flex items-center text-sm font-semibold text-navy transition-colors group-hover:text-teal">
+                    Learn more
+                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>
