@@ -31,13 +31,13 @@ export function ServicesHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[85vh] overflow-hidden lg:min-h-[90vh]"
+      className="relative min-h-screen overflow-hidden"
     >
       <PathHeroDecoration floatingItems={floatingServices} />
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-center px-6 pb-20 pt-32 lg:min-h-[90vh] lg:px-8"
+        className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-20 pt-32 lg:px-8"
       >
         <LineReveal delay={0.1}>
           <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-teal">

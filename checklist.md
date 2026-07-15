@@ -21,3 +21,5 @@
 - [x] Destinations hero — same pattern with Destination page hero img
 - [x] Contact hero — same pattern with Contact page hero img
 - [x] Process hero — same pattern with Process page img
+- [x] Compress heroes to web JPEGs (fix LCP warnings from destination cards winning LCP)
+- [x] Match all page heroes to full viewport height (`min-h-screen`) like home

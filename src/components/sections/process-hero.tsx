@@ -3,13 +3,13 @@
 import Image from "next/image";
 import { processContent } from "@/content/process";
 
-const HERO_IMAGE = "/stock/Process%20page%20img.JPG";
+const HERO_IMAGE = "/stock/process-hero.jpg";
 
 export function ProcessHero() {
   const { hero } = processContent;
 
   return (
-    <section className="relative min-h-[85vh] overflow-hidden lg:min-h-[90vh]">
+    <section className="relative min-h-screen overflow-hidden">
       <Image
         src={HERO_IMAGE}
         alt="Students guided through the university application process"
@@ -23,7 +23,7 @@ export function ProcessHero() {
       <div className="absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/40 lg:via-white/85 lg:to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-white/30" />
 
-      <div className="relative mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-center px-6 pb-20 pt-32 lg:min-h-[90vh] lg:px-8">
+      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-20 pt-32 lg:px-8">
         <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-teal">
           {hero.label}
         </p>

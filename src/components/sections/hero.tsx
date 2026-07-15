@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { homeContent } from "@/content/home";
 import { Button } from "@/components/ui/button";
 
-const HERO_IMAGE = "/stock/Homepage%20hero%20img.jpg";
+const HERO_IMAGE = "/stock/homepage-hero.jpg";
 
 export function HeroSection() {
   return (
