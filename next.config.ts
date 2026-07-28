@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // WiFi IP (en0) — not bridge0 (192.168.2.1), which phones can't reach
+  allowedDevOrigins: ["192.168.100.247"],
 };
 
 export default nextConfig;

@@ -61,7 +61,7 @@ export default function DestinationsPage() {
                         </p>
                         <ul className="mt-3 grid gap-1 sm:grid-cols-2">
                           {dest.universities.map((u) => (
-                            <li key={u} className="text-sm font-medium text-navy">
+                            <li key={u} className="text-sm font-medium text-ink">
                               {u}
                             </li>
                           ))}

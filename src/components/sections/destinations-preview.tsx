@@ -28,7 +28,7 @@ export function DestinationsPreview() {
             <StaggerItem key={dest.id}>
               <Link
                 href="/destinations"
-                className="group block h-full overflow-hidden rounded-2xl border border-border/50 bg-white shadow-sm transition-shadow hover:shadow-lg"
+                className="group block h-full overflow-hidden rounded-2xl border border-border/50 bg-card shadow-sm transition-shadow hover:shadow-lg"
                 data-cursor-magnetic
               >
                 <div className="relative aspect-[4/5] overflow-hidden">
@@ -53,7 +53,7 @@ export function DestinationsPreview() {
                   <p className="text-sm leading-relaxed text-muted-foreground line-clamp-3">
                     {dest.description}
                   </p>
-                  <span className="mt-4 inline-flex items-center text-sm font-semibold text-navy transition-colors group-hover:text-teal">
+                  <span className="mt-4 inline-flex items-center text-sm font-semibold text-ink transition-colors group-hover:text-teal">
                     Learn more
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>

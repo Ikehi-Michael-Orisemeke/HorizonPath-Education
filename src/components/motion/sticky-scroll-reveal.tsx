@@ -101,7 +101,7 @@ export function StickyScrollReveal({ items }: { items: StickyScrollItem[] }) {
                   className={cn(
                     "w-full rounded-2xl border p-6 transition-colors duration-500 lg:p-8",
                     active === i
-                      ? "border-teal/30 bg-white shadow-lg shadow-teal/5"
+                      ? "border-teal/30 bg-card shadow-lg shadow-teal/5"
                       : "border-border/40 bg-muted/30"
                   )}
                   animate={{
@@ -113,7 +113,7 @@ export function StickyScrollReveal({ items }: { items: StickyScrollItem[] }) {
                   <span className="font-sans text-[10px] font-medium uppercase tracking-[0.15em] text-teal">
                     Step {item.number}
                   </span>
-                  <h3 className="mt-2 font-display text-2xl font-semibold text-navy">
+                  <h3 className="mt-2 font-display text-2xl font-semibold text-ink">
                     {item.title}
                   </h3>
                   <p className="mt-3 leading-relaxed text-muted-foreground">

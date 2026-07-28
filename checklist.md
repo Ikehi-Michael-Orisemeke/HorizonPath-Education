@@ -1,25 +1,14 @@
 # HorizonPath Education — Checklist
 
-## Brand
-- [x] Official palette: Deep Blue #0F3D6E, Teal #0FA3A6, Silver #C0C7D1, Charcoal #2B3440
-- [x] Typography: Newsreader (display) + Instrument Sans (UI/body)
-- [x] Removed interim MOE colours (gold, old navy/teal)
-- [x] Teal reserved for actions and emphasis only
-- [x] Logo uses `/brand/horizonpath.svg`
-- [x] Build passes
+## Global Reach animation upgrade
+- [x] Pull UX + 21st inspiration for the section
+- [x] Replace restless scroll-slide with intentional motion
+- [x] Add entrance stagger, 3D hover depth, soft float, reduced-motion
+- [ ] Review with you on home page and decide next section
 
-## Destination images
-- [x] Rename & compress UK / Canada / USA / Europe stock photos for web
-- [x] Add `image` paths to destination content
-- [x] Wire images into Global Reach (home parallax)
-- [x] Wire images into Where will you study (home preview)
-- [x] Wire images into Destinations page cards
+## Theme flip (done)
+- [x] White / Blue / Teal atmospheres + header toggle
 
-## Hero images
-- [x] Homepage hero — full-bleed stock image + gradient overlay
-- [x] Success Stories hero — same pattern with Success stories page hero img
-- [x] Destinations hero — same pattern with Destination page hero img
-- [x] Contact hero — same pattern with Contact page hero img
-- [x] Process hero — same pattern with Process page img
-- [x] Compress heroes to web JPEGs (fix LCP warnings from destination cards winning LCP)
-- [x] Match all page heroes to full viewport height (`min-h-screen`) like home
+## Brand (done)
+- [x] Official palette + typography
+- [x] Destination + hero images

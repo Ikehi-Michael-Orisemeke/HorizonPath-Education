@@ -13,8 +13,8 @@ const buttonVariants = cva(
         accent:
           "bg-teal text-white shadow-lg shadow-teal/25 hover:brightness-110 hover:shadow-xl hover:shadow-teal/30 before:absolute before:inset-0 before:translate-x-[-100%] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent hover:before:translate-x-[100%] before:transition-transform before:duration-700",
         outline:
-          "border-2 border-navy/20 bg-transparent text-navy hover:border-navy hover:bg-navy/5",
-        ghost: "text-navy hover:bg-navy/5",
+          "border-2 border-ink/20 bg-transparent text-ink hover:border-ink hover:bg-ink/5",
+        ghost: "text-ink hover:bg-ink/5",
         link: "text-teal underline-offset-4 hover:underline",
       },
       size: {

@@ -49,7 +49,7 @@ export function ServicesHero() {
           {words.map((word, i) => (
             <motion.span
               key={`${word}-${i}`}
-              className="mr-[0.25em] inline-block font-display text-4xl font-semibold leading-[1.05] tracking-tight text-navy sm:text-5xl lg:text-6xl"
+              className="mr-[0.25em] inline-block font-display text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{
@@ -79,7 +79,7 @@ export function ServicesHero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-navy/40"
+          className="flex flex-col items-center gap-2 text-ink/40"
         >
           <span className="text-[10px] font-medium uppercase tracking-[0.2em]">
             Scroll

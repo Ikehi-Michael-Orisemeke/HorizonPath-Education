@@ -31,7 +31,7 @@ export function TestimonialCarousel() {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden rounded-3xl border border-border/60 bg-white shadow-lg">
+      <div className="overflow-hidden rounded-3xl border border-border/60 bg-card shadow-lg">
         <motion.div
           key={active}
           drag="x"
@@ -45,12 +45,12 @@ export function TestimonialCarousel() {
           className="cursor-grab p-8 active:cursor-grabbing lg:p-14"
         >
           <Quote className="h-10 w-10 text-teal/30" />
-          <blockquote className="mt-8 font-display text-xl font-medium leading-relaxed text-navy sm:text-2xl lg:text-3xl">
+          <blockquote className="mt-8 font-display text-xl font-medium leading-relaxed text-ink sm:text-2xl lg:text-3xl">
             &ldquo;{current.quote}&rdquo;
           </blockquote>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <div>
-              <p className="text-lg font-semibold text-navy">{current.name}</p>
+              <p className="text-lg font-semibold text-ink">{current.name}</p>
               <p className="text-sm text-muted-foreground">{current.role}</p>
             </div>
             <Badge variant="accent" className="text-sm">
@@ -73,7 +73,7 @@ export function TestimonialCarousel() {
               aria-label={`Go to testimonial ${i + 1}`}
               className={cn(
                 "h-2 rounded-full transition-all duration-300",
-                i === active ? "w-10 bg-teal" : "w-2 bg-navy/15 hover:bg-navy/30"
+                i === active ? "w-10 bg-teal" : "w-2 bg-ink/15 hover:bg-ink/30"
               )}
             />
           ))}

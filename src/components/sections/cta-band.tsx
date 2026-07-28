@@ -33,7 +33,7 @@ export function CtaBand({
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-4xl font-semibold text-navy sm:text-5xl lg:text-6xl text-balance">
+            <h2 className="font-display text-4xl font-semibold text-ink sm:text-5xl lg:text-6xl text-balance">
               {title}
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">

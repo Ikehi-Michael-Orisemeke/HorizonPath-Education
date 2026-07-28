@@ -64,8 +64,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="white"
+      suppressHydrationWarning
       className={`${newsreader.variable} ${instrumentSans.variable} h-full scroll-smooth`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("horizonpath-theme");if(t==="white"||t==="blue"||t==="teal"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col antialiased">
         <Providers>
           <SmoothScroll>

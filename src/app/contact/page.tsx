@@ -23,7 +23,7 @@ export default function ContactPage() {
 
           <Reveal delay={0.15} className="space-y-8">
             <div className="rounded-2xl border border-border/60 bg-muted/30 p-6">
-              <h3 className="font-display text-lg font-bold text-navy">
+              <h3 className="font-display text-lg font-bold text-ink">
                 What happens next?
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
@@ -44,7 +44,7 @@ export default function ContactPage() {
 
             <IcefBadge />
 
-            <div className="rounded-2xl border border-border/60 bg-white p-6">
+            <div className="rounded-2xl border border-border/60 bg-card p-6">
               <p className="text-xs text-muted-foreground">
                 A subsidiary of R&M Education Group.
               </p>

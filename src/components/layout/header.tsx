@@ -8,6 +8,7 @@ import { navLinks } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/layout/logo";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 import {
   Sheet,
   SheetContent,
@@ -53,7 +54,7 @@ export function Header() {
                 data-cursor-magnetic
                 className={cn(
                   "relative px-4 py-2 text-sm font-semibold transition-colors",
-                  isActive ? "text-navy" : "text-navy/60 hover:text-navy"
+                  isActive ? "text-ink" : "text-ink/60 hover:text-ink"
                 )}
               >
                 {link.label}
@@ -69,7 +70,10 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <ThemeToggle className="hidden sm:inline-flex" />
+          <ThemeToggle compact className="sm:hidden" />
+
           <Button
             asChild
             variant="accent"
@@ -104,7 +108,7 @@ export function Header() {
                         pathname === link.href ||
                           (link.href !== "/" && pathname.startsWith(link.href))
                           ? "text-teal"
-                          : "text-navy"
+                          : "text-ink"
                       )}
                     >
                       {link.label}
@@ -112,7 +116,8 @@ export function Header() {
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-auto">
+              <div className="mt-auto space-y-3">
+                <ThemeToggle className="w-full justify-center" />
                 <Button asChild variant="accent" className="w-full" data-cursor-accent>
                   <Link href="/contact" onClick={() => setOpen(false)}>
                     Apply Now

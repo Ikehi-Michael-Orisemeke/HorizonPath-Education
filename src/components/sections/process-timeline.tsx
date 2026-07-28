@@ -52,7 +52,7 @@ export function ProcessTimeline() {
             key={step.id}
             data-step
             className={cn(
-              "relative rounded-2xl border border-border/60 bg-white p-6 shadow-sm transition-all md:ml-16 md:p-8",
+              "relative rounded-2xl border border-border/60 bg-card p-6 shadow-sm transition-all md:ml-16 md:p-8",
               "hover:border-teal/20 hover:shadow-md"
             )}
           >
@@ -62,14 +62,14 @@ export function ProcessTimeline() {
                 <span className="text-xs font-extrabold uppercase tracking-widest text-teal">
                   Step {step.number}
                 </span>
-                <h3 className="mt-1 font-display text-2xl font-bold text-navy">
+                <h3 className="mt-1 font-display text-2xl font-bold text-ink">
                   {step.title}
                 </h3>
                 <p className="mt-3 max-w-xl text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </div>
-              <span className="font-display text-5xl font-bold text-navy/5">
+              <span className="font-display text-5xl font-bold text-ink/5">
                 {step.number}
               </span>
             </div>

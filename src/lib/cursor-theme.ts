@@ -21,6 +21,19 @@ const DARK_SURFACE_CLASS =
   /\b(bg-navy|from-navy|via-deep|to-deep|from-blue-900|from-indigo-900|from-red-900|from-teal-900)\b/;
 
 export function isOnDarkSurface(element: HTMLElement | null): boolean {
+  if (typeof document !== "undefined") {
+    const theme = document.documentElement.getAttribute("data-theme");
+    if (theme === "blue" || theme === "teal") {
+      // Dark atmospheres: light cursor by default unless over an explicitly bright surface
+      let current = element;
+      while (current && current !== document.documentElement) {
+        if (current.dataset.cursorLight !== undefined) return false;
+        current = current.parentElement;
+      }
+      return true;
+    }
+  }
+
   let current = element;
 
   while (current && current !== document.documentElement) {

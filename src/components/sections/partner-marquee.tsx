@@ -16,7 +16,7 @@ function PartnerLogo({ name, crest }: { name: string; crest: string }) {
           unoptimized={crest.endsWith(".svg")}
         />
       </div>
-      <span className="whitespace-nowrap font-display text-base font-medium text-navy/40 transition-colors group-hover:text-navy/70 sm:text-lg">
+      <span className="whitespace-nowrap font-display text-base font-medium text-ink/40 transition-colors group-hover:text-ink/70 sm:text-lg">
         {name}
       </span>
     </div>

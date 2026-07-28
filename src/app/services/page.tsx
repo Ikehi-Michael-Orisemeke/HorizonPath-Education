@@ -76,7 +76,7 @@ export default function ServicesPage() {
                     </div>
                     <h3
                       className={cn(
-                        "font-display font-bold text-navy",
+                        "font-display font-bold text-ink",
                         isLarge ? "text-2xl lg:text-3xl" : "text-xl"
                       )}
                     >

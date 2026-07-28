@@ -52,7 +52,7 @@ export function PageHero({ label, title, description, className }: PageHeroProps
           {words.map((word, i) => (
             <motion.span
               key={`${word}-${i}`}
-              className="mr-[0.25em] inline-block font-display text-4xl font-bold tracking-tight text-navy sm:text-5xl lg:text-6xl"
+              className="mr-[0.25em] inline-block font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl"
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{

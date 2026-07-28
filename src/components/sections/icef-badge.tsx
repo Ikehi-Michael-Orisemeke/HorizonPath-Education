@@ -12,7 +12,7 @@ export function IcefBadge({ variant = "default" }: IcefBadgeProps) {
         "inline-flex items-center gap-3 rounded-xl border px-4 py-3",
         variant === "footer"
           ? "border-white/10 bg-white/5"
-          : "border-navy/10 bg-white shadow-sm"
+          : "border-ink/10 bg-card shadow-sm"
       )}
     >
       <div
@@ -32,7 +32,7 @@ export function IcefBadge({ variant = "default" }: IcefBadgeProps) {
         <p
           className={cn(
             "text-xs font-extrabold uppercase tracking-widest",
-            variant === "footer" ? "text-white/80" : "text-navy"
+            variant === "footer" ? "text-white/80" : "text-ink"
           )}
         >
           ICEF Accredited

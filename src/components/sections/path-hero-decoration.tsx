@@ -99,7 +99,7 @@ export function PathHeroDecoration({ floatingItems }: PathHeroDecorationProps) {
                 className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold shadow-lg backdrop-blur-md ${
                   item.accent
                     ? "bg-teal text-white shadow-teal/25"
-                    : "border border-white/40 bg-white/70 text-navy"
+                    : "border border-white/40 bg-white/70 text-ink"
                 }`}
               >
                 {item.label}

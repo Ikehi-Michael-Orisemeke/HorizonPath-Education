@@ -189,8 +189,8 @@ export function ContactForms() {
       </TabsList>
 
       <TabsContent value="application">
-        <div className="rounded-2xl border border-border/60 bg-white p-6 shadow-sm lg:p-8">
-          <h3 className="font-display text-xl font-bold text-navy">
+        <div className="rounded-2xl border border-border/60 bg-card p-6 shadow-sm lg:p-8">
+          <h3 className="font-display text-xl font-bold text-ink">
             {application.title}
           </h3>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -203,8 +203,8 @@ export function ContactForms() {
       </TabsContent>
 
       <TabsContent value="enquiry">
-        <div className="rounded-2xl border border-border/60 bg-white p-6 shadow-sm lg:p-8">
-          <h3 className="font-display text-xl font-bold text-navy">
+        <div className="rounded-2xl border border-border/60 bg-card p-6 shadow-sm lg:p-8">
+          <h3 className="font-display text-xl font-bold text-ink">
             {enquiry.title}
           </h3>
           <p className="mt-2 text-sm text-muted-foreground">

@@ -30,7 +30,7 @@ export default function SuccessStoriesPage() {
       <section className="border-t border-border/60 bg-muted/30 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Reveal>
-            <h2 className="font-display text-3xl font-bold text-navy sm:text-4xl">
+            <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
               Case studies
             </h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -68,7 +68,7 @@ export default function SuccessStoriesPage() {
                       <p className="text-xs font-extrabold uppercase tracking-widest text-teal">
                         Result
                       </p>
-                      <p className="mt-1 text-sm font-medium text-navy">
+                      <p className="mt-1 text-sm font-medium text-ink">
                         {study.result}
                       </p>
                     </div>

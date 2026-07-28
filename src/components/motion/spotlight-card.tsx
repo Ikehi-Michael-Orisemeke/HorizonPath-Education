@@ -37,7 +37,7 @@ export function SpotlightCard({
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{ y: -6, transition: { duration: 0.3 } }}
       className={cn(
-        "group relative overflow-hidden rounded-2xl border border-border/60 bg-white shadow-sm transition-shadow duration-500 hover:shadow-xl hover:shadow-navy/5",
+        "group relative overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-shadow duration-500 hover:shadow-xl hover:shadow-navy/5",
         className
       )}
       data-cursor-magnetic
