@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="white"
+      data-theme="blue"
       suppressHydrationWarning
       className={`${newsreader.variable} ${instrumentSans.variable} h-full scroll-smooth`}
     >

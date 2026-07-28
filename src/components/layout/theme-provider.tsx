@@ -28,11 +28,11 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("white");
+  const [theme, setThemeState] = useState<Theme>("blue");
 
   useEffect(() => {
     const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
-    const initial = isTheme(stored) ? stored : "white";
+    const initial = isTheme(stored) ? stored : "blue";
     setThemeState(initial);
     applyTheme(initial);
   }, []);

@@ -1,4 +1,4 @@
-export const THEMES = ["white", "blue", "teal"] as const;
+export const THEMES = ["blue", "teal", "white"] as const;
 
 export type Theme = (typeof THEMES)[number];
 

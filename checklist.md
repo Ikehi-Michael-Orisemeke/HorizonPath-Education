@@ -8,6 +8,7 @@
 
 ## Theme flip (done)
 - [x] White / Blue / Teal atmospheres + header toggle
+- [x] Default theme set to blue
 
 ## Brand (done)
 - [x] Official palette + typography
