@@ -13,10 +13,9 @@ import {
 } from "lucide-react";
 import { servicesContent } from "@/content/services";
 import { ServicesHero } from "@/components/sections/services-hero";
-import { SectionHeading } from "@/components/sections/section-heading";
 import { CtaBand } from "@/components/sections/cta-band";
 import { SpotlightCard } from "@/components/motion/spotlight-card";
-import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/reveal";
+import { StaggerContainer, StaggerItem } from "@/components/motion/reveal";
 
 const iconMap: Record<string, LucideIcon> = {
   GraduationCap,
@@ -72,21 +71,6 @@ export default function ServicesPage() {
               );
             })}
           </StaggerContainer>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden border-t border-border/60 bg-muted/30 py-24">
-        <div className="absolute inset-0 opacity-50 gradient-mesh" />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <Reveal>
-            <SectionHeading
-              label="Full spectrum"
-              title="ESL, short courses & study-abroad — all under one roof"
-              description="From intensive English courses to professional certifications and study-abroad consulting, we cover the full spectrum of international education for students aged 16 and above."
-              align="center"
-              className="max-w-3xl"
-            />
-          </Reveal>
         </div>
       </section>
 

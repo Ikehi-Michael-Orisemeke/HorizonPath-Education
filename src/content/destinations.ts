@@ -12,7 +12,7 @@ export const destinationsContent = {
     label: "Destinations",
     title: "Study where ambition meets opportunity",
     description:
-      "We place students at leading universities across four continents — each destination offering distinct academic strengths, cultural experiences, and career pathways.",
+      "We place students at leading universities across all continents",
   },
   destinations: [
     {

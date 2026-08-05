@@ -1,5 +1,16 @@
 # HorizonPath Education — Checklist
 
+## Programmes page cleanup
+- [x] Remove "Full spectrum" section
+
+## Add About, Blogs & Schools tabs
+- [x] Download hero images (About, Blogs, Schools)
+- [x] Add nav links in `brand.ts`
+- [x] Create content files for each page
+- [x] Create hero section components
+- [x] Create `/about`, `/blogs`, `/schools` pages + metadata layouts
+- [ ] Review heroes in browser
+
 ## Rename Services → Programmes
 - [x] Change nav tab label to Programmes
 - [x] Footer updates via shared navLinks
@@ -42,6 +53,7 @@
 - [x] Delete unused cursor files
 
 ## Home page cleanup
+- [x] Remove Case studies section
 - [x] Remove "4 Continents Served" from trust bar stats
 - [x] Adjust trust bar grid for 3 remaining stats
 

@@ -176,12 +176,10 @@ export function DestinationsParallax() {
             Global Reach
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
-            Four continents. Endless opportunity.
+          Study where ambition meets opportunity.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/60">
-            Hover a destination to feel the pathway — UK, Canada, USA, and the rest
-            of Europe and beyond, each with its own academic strengths and student
-            experience.
+          We place students at leading universities across all continents
           </p>
         </Reveal>
 

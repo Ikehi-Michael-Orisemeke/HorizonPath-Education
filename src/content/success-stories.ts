@@ -8,15 +8,6 @@ export type Testimonial = {
   outcome: string;
 };
 
-export type CaseStudy = {
-  id: string;
-  title: string;
-  summary: string;
-  challenge: string;
-  solution: string;
-  result: string;
-};
-
 export const successStoriesContent = {
   hero: {
     label: "Success Stories",
@@ -66,30 +57,5 @@ export const successStoriesContent = {
       outcome: "Completed Executive Leadership Programme — Bocconi",
     },
   ] satisfies Testimonial[],
-  caseStudies: [
-    {
-      id: "foundation-to-russell",
-      title: "Foundation to Russell Group",
-      summary:
-        "An international student with strong potential but non-standard qualifications gained entry to a top UK university through a carefully matched foundation pathway.",
-      challenge:
-        "Student had completed A-level equivalents that didn't directly map to UK entry requirements, with a target of studying Economics at a Russell Group institution.",
-      solution:
-        "We identified a foundation programme with guaranteed progression, supported the personal statement, and coordinated the UCAS application timeline.",
-      result:
-        "Successful completion of foundation year with distinction, progressing to BSc Economics at the University of Bristol.",
-    },
-    {
-      id: "career-change-masters",
-      title: "Career Change via Master's",
-      summary:
-        "A working professional in finance transitioned to tech through a conversion master's programme in Canada.",
-      challenge:
-        "Mid-career professional with no formal computing background seeking a credible pathway into the technology sector within 18 months.",
-      solution:
-        "Matched to a postgraduate diploma with co-op placement, supported SOP development, and guided the study permit application process.",
-      result:
-        "Enrolled at University of Waterloo — Master of Engineering, with co-op placement secured in first term.",
-    },
-  ] satisfies CaseStudy[],
 };
+
