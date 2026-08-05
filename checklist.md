@@ -1,5 +1,8 @@
 # HorizonPath Education — Checklist
 
+## Nav cleanup
+- [x] Hide Schools from navbar and footer
+
 ## Contact page — application form
 - [x] Read start-application-form.html fields/flow
 - [x] Map to existing contact form + design system
