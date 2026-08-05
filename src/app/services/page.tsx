@@ -17,7 +17,6 @@ import { SectionHeading } from "@/components/sections/section-heading";
 import { CtaBand } from "@/components/sections/cta-band";
 import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/reveal";
-import { cn } from "@/lib/utils";
 
 const iconMap: Record<string, LucideIcon> = {
   GraduationCap,
@@ -28,17 +27,6 @@ const iconMap: Record<string, LucideIcon> = {
   Clock,
   Award,
   Globe,
-};
-
-const bentoLayout: Record<string, string> = {
-  undergraduate: "sm:col-span-2 sm:row-span-2",
-  postgraduate: "sm:col-span-1",
-  foundation: "sm:col-span-1",
-  transfer: "sm:col-span-1",
-  esl: "sm:col-span-1",
-  "short-courses": "sm:col-span-1",
-  certifications: "sm:col-span-1",
-  "study-abroad": "sm:col-span-2",
 };
 
 export default function ServicesPage() {
@@ -53,41 +41,19 @@ export default function ServicesPage() {
           <StaggerContainer className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => {
               const Icon = iconMap[service.icon] ?? GraduationCap;
-              const isLarge = service.id === "undergraduate";
               return (
-                <StaggerItem
-                  key={service.id}
-                  className={bentoLayout[service.id] ?? ""}
-                >
+                <StaggerItem key={service.id}>
                   <SpotlightCard
-                    className={cn(
-                      "h-full p-6 lg:p-8",
-                      isLarge && "sm:p-10"
-                    )}
+                    className="h-full p-6 lg:p-8"
                     data-cursor-magnetic
                   >
-                    <div
-                      className={cn(
-                        "mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal/10 text-teal transition-all duration-300 group-hover:bg-teal group-hover:text-white",
-                        isLarge && "h-16 w-16"
-                      )}
-                    >
-                      <Icon className={isLarge ? "h-8 w-8" : "h-6 w-6"} />
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal/10 text-teal transition-all duration-300 group-hover:bg-teal group-hover:text-white">
+                      <Icon className="h-6 w-6" />
                     </div>
-                    <h3
-                      className={cn(
-                        "font-display font-bold text-ink",
-                        isLarge ? "text-2xl lg:text-3xl" : "text-xl"
-                      )}
-                    >
+                    <h3 className="font-display text-xl font-bold text-ink">
                       {service.title}
                     </h3>
-                    <p
-                      className={cn(
-                        "mt-3 leading-relaxed text-muted-foreground",
-                        isLarge ? "text-base" : "text-sm"
-                      )}
-                    >
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                       {service.description}
                     </p>
                     <ul className="mt-5 space-y-2">
@@ -114,9 +80,9 @@ export default function ServicesPage() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <Reveal>
             <SectionHeading
-              label="EduVoyage absorbed"
+              label="Full spectrum"
               title="ESL, short courses & study-abroad — all under one roof"
-              description="Former EduVoyage programmes now live here at HorizonPath. From intensive English courses to professional certifications and study-abroad consulting, we cover the full spectrum of international education for students aged 16 and above."
+              description="From intensive English courses to professional certifications and study-abroad consulting, we cover the full spectrum of international education for students aged 16 and above."
               align="center"
               className="max-w-3xl"
             />

@@ -174,14 +174,7 @@ body {
   color: var(--charcoal);
   font-family: var(--font-instrument-sans), system-ui, sans-serif;
   line-height: 1.5;
-  cursor: none;
   transition: background-color 0.35s ease, color 0.35s ease;
-}
-
-@media (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -287,16 +280,6 @@ body {
 
 .text-balance {
   text-wrap: balance;
-}
-
-[data-cursor-magnetic] {
-  cursor: none;
-}
-
-@media (pointer: coarse) {
-  [data-cursor-magnetic] {
-    cursor: pointer;
-  }
 }
 
 @keyframes marquee {

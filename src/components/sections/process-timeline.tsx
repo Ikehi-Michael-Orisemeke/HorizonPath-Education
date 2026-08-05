@@ -1,95 +1,67 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { processContent } from "@/content/process";
-import { cn } from "@/lib/utils";
-
-gsap.registerPlugin(ScrollTrigger);
+import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/reveal";
+import { Button } from "@/components/ui/button";
 
 export function ProcessTimeline() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (prefersReducedMotion || !containerRef.current) return;
-
-    const steps = containerRef.current.querySelectorAll("[data-step]");
-    steps.forEach((step, i) => {
-      gsap.fromTo(
-        step,
-        { opacity: 0.3, x: -20 },
-        {
-          opacity: 1,
-          x: 0,
-          scrollTrigger: {
-            trigger: step,
-            start: "top 70%",
-            end: "top 40%",
-            toggleActions: "play reverse play reverse",
-          },
-          duration: 0.5,
-          delay: i * 0.05,
-        }
-      );
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
-  }, []);
+  const { steps, cta } = processContent;
 
   return (
-    <div ref={containerRef} className="relative">
-      <div className="absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-teal via-teal/30 to-transparent md:left-8 md:block" />
+    <div>
+      <div className="relative">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-6 top-6 hidden h-[calc(100%-3rem)] w-px bg-gradient-to-b from-teal/60 via-teal/25 to-teal/60 sm:block"
+        />
 
-      <div className="space-y-8">
-        {processContent.steps.map((step, index) => (
-          <div
-            key={step.id}
-            data-step
-            className={cn(
-              "relative rounded-2xl border border-border/60 bg-card p-6 shadow-sm transition-all md:ml-16 md:p-8",
-              "hover:border-teal/20 hover:shadow-md"
-            )}
-          >
-            <div className="absolute -left-16 top-8 hidden h-4 w-4 rounded-full border-4 border-white bg-teal shadow-md md:block" />
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <span className="text-xs font-extrabold uppercase tracking-widest text-teal">
-                  Step {step.number}
-                </span>
-                <h3 className="mt-1 font-display text-2xl font-bold text-ink">
-                  {step.title}
-                </h3>
-                <p className="mt-3 max-w-xl text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-              <span className="font-display text-5xl font-bold text-ink/5">
-                {step.number}
-              </span>
-            </div>
-            <ul className="mt-6 grid gap-2 sm:grid-cols-3">
-              {step.details.map((detail) => (
-                <li
-                  key={detail}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
-                >
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
-                  {detail}
-                </li>
-              ))}
-            </ul>
-            {index < processContent.steps.length - 1 && (
-              <div className="mt-4 block h-px bg-border/60 md:hidden" />
-            )}
-          </div>
-        ))}
+        <StaggerContainer className="space-y-6">
+          {steps.map((step) => (
+            <StaggerItem key={step.id}>
+              <article className="group relative grid gap-4 rounded-2xl border border-border/60 bg-card p-6 shadow-sm transition-shadow hover:border-teal/20 hover:shadow-md sm:grid-cols-[auto_1fr] sm:gap-8 sm:p-8">
+                <div className="flex items-start">
+                  <span className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-teal bg-background font-display text-lg font-semibold text-teal">
+                    {step.number}
+                  </span>
+                </div>
+                <div>
+                  <h2 className="font-display text-xl font-semibold text-ink sm:text-2xl">
+                    Step {step.number} — {step.title}
+                  </h2>
+                  <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+                    {step.body}
+                  </p>
+                </div>
+              </article>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
       </div>
+
+      <Reveal className="mt-10">
+        <p className="max-w-3xl text-base leading-relaxed text-muted-foreground">
+          Looking for foundation pathways, ESL, or short courses too? These are
+          offered as separate, dedicated programmes — see{" "}
+          <Link
+            href="/services"
+            className="font-semibold text-ink underline underline-offset-4 transition-colors hover:text-teal"
+          >
+            Programmes
+          </Link>{" "}
+          for details.
+        </p>
+      </Reveal>
+
+      <Reveal className="mt-8">
+        <Button asChild variant="accent" size="lg" className="group shadow-lg shadow-teal/20">
+          <Link href="/contact">
+            {cta.button}
+            <ArrowRight className="transition-transform group-hover:translate-x-1" />
+          </Link>
+        </Button>
+      </Reveal>
     </div>
   );
 }

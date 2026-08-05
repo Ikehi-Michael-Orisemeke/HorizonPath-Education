@@ -14,9 +14,8 @@ export const brand = {
 
 export const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Programmes" },
   { href: "/destinations", label: "Destinations" },
-  { href: "/success-stories", label: "Success Stories" },
   { href: "/process", label: "Process" },
   { href: "/contact", label: "Contact" },
 ] as const;

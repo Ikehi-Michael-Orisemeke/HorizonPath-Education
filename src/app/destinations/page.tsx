@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { destinationsContent } from "@/content/destinations";
 import { DestinationsHero } from "@/components/sections/destinations-hero";
-import { CtaBand } from "@/components/sections/cta-band";
 import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { TiltCard } from "@/components/motion/tilt-card";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/reveal";
@@ -55,18 +54,6 @@ export default function DestinationsPage() {
                           </Badge>
                         ))}
                       </div>
-                      <div className="mt-6 border-t border-border/60 pt-6">
-                        <p className="text-xs font-extrabold uppercase tracking-widest text-muted-foreground">
-                          Partner institutions
-                        </p>
-                        <ul className="mt-3 grid gap-1 sm:grid-cols-2">
-                          {dest.universities.map((u) => (
-                            <li key={u} className="text-sm font-medium text-ink">
-                              {u}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
                     </div>
                   </SpotlightCard>
                 </TiltCard>
@@ -84,8 +71,6 @@ export default function DestinationsPage() {
           </Reveal>
         </div>
       </section>
-
-      <CtaBand />
     </>
   );
 }

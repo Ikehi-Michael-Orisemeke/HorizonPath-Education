@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Application Process",
+  title: "Process — From first conversation to enrolment",
   description:
-    "Follow HorizonPath Education's step-by-step application journey — from discovery to arrival at your chosen university.",
+    "Every university pathway follows the same careful process — consultation, recommendation, application, preparation, and visa support.",
 };
 
 export default function ProcessLayout({

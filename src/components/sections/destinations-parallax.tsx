@@ -172,15 +172,16 @@ export function DestinationsParallax() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <Reveal className="mb-14 text-center lg:mb-16">
-          <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-teal">
+          <p className="font-display text-4xl font-bold uppercase tracking-[0.12em] text-teal sm:text-5xl">
             Global Reach
           </p>
-          <h2 className="mt-3 font-display text-4xl font-bold text-white sm:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
             Four continents. Endless opportunity.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/60">
-            Hover a destination to feel the pathway — UK, Canada, USA, and Europe,
-            each with its own academic strengths and student experience.
+            Hover a destination to feel the pathway — UK, Canada, USA, and the rest
+            of Europe and beyond, each with its own academic strengths and student
+            experience.
           </p>
         </Reveal>
 

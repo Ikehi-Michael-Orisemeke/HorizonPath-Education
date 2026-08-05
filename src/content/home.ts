@@ -12,14 +12,7 @@ export const homeContent = {
     { value: "40+", label: "Partner Universities" },
     { value: "15+", label: "Years of Experience" },
     { value: "98%", label: "Client Satisfaction" },
-    { value: "4", label: "Continents Served" },
   ],
-  destinationsPreview: {
-    label: "Where will you study?",
-    title: "Study across the world's leading destinations",
-    description:
-      "From historic UK campuses to innovative North American programmes and Europe's diverse academic landscape — we match your ambitions to the right country and institution.",
-  },
   servicesTeaser: {
     label: "What we offer",
     title: "Comprehensive university pathways",

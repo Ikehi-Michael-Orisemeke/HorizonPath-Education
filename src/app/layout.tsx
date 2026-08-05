@@ -5,7 +5,6 @@ import { brand } from "@/lib/brand";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
-import { CustomCursor } from "@/components/motion/custom-cursor";
 import { Providers } from "@/components/layout/providers";
 
 const newsreader = Newsreader({
@@ -78,7 +77,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col antialiased">
         <Providers>
           <SmoothScroll>
-            <CustomCursor />
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

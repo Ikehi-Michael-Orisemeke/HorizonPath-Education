@@ -10,8 +10,8 @@ export function TrustBar() {
     <section className="relative border-y border-border/60 bg-card py-16">
       <div className="section-divider absolute inset-x-0 top-0" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <StaggerContainer className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:items-center">
-          <StaggerItem className="lg:col-span-1">
+        <StaggerContainer className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:items-center">
+          <StaggerItem>
             <IcefBadge />
           </StaggerItem>
           {homeContent.stats.map((stat) => (

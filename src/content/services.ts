@@ -8,7 +8,7 @@ export type Service = {
 
 export const servicesContent = {
   hero: {
-    label: "Our Services",
+    label: "Our Programmes",
     title: "Pathways to world-class higher education",
     description:
       "From undergraduate admissions to professional certifications abroad — HorizonPath provides end-to-end guidance for students aged 16 and above, graduates, and working professionals.",

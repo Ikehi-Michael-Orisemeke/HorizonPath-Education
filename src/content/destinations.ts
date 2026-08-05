@@ -5,7 +5,6 @@ export type Destination = {
   description: string;
   image: string;
   highlights: string[];
-  universities: string[];
 };
 
 export const destinationsContent = {
@@ -28,12 +27,6 @@ export const destinationsContent = {
         "One-year master's programmes",
         "Rich cultural & historical heritage",
       ],
-      universities: [
-        "University of Manchester",
-        "King's College London",
-        "University of Edinburgh",
-        "University of Bristol",
-      ],
     },
     {
       id: "canada",
@@ -46,12 +39,6 @@ export const destinationsContent = {
         "Post-graduation work permits",
         "Affordable tuition vs. US/UK peers",
         "Safe, inclusive student cities",
-      ],
-      universities: [
-        "University of Toronto",
-        "McGill University",
-        "University of British Columbia",
-        "University of Waterloo",
       ],
     },
     {
@@ -66,30 +53,18 @@ export const destinationsContent = {
         "Generous scholarship opportunities",
         "OPT & career pathways",
       ],
-      universities: [
-        "Northeastern University",
-        "Arizona State University",
-        "University of California system",
-        "Boston University",
-      ],
     },
     {
       id: "europe",
-      name: "Europe",
-      tagline: "Diverse programmes, borderless learning",
+      name: "Rest of Europe and Beyond",
+      tagline: "Wider horizons, borderless learning",
       description:
-        "From the Netherlands and Germany to Ireland and beyond — Europe offers affordable or tuition-free options, English-taught programmes, and the chance to study at the heart of global culture and industry.",
+        "Beyond the UK — from the Netherlands, Germany, and Ireland to destinations further afield. Affordable or tuition-free options, English-taught programmes, and study experiences at the heart of global culture and industry.",
       image: "/stock/europe.jpg",
       highlights: [
         "English-taught bachelor's & master's",
         "Affordable tuition in many countries",
         "Schengen travel & cultural immersion",
-      ],
-      universities: [
-        "TU Munich",
-        "University of Amsterdam",
-        "Trinity College Dublin",
-        "Bocconi University",
       ],
     },
   ] satisfies Destination[],
