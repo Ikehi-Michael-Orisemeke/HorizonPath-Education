@@ -40,7 +40,7 @@ export const servicesContent = {
     },
     {
       id: "foundation",
-      title: "Foundation Programmes",
+      title: "Pathway Programmes",
       description:
         "Bridge the gap between your current qualifications and degree-level study. Foundation pathways prepare international students for success at UK, European, and North American universities.",
       highlights: [
