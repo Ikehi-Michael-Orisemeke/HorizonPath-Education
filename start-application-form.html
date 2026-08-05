@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Start Your Application — HorizonPath Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     DESIGN TOKENS
+     Per the exec summary: deep blue + silver as the primary
+     system, off-white reserved for the footer only — so the page
+     and card backgrounds here are white/near-white, not cream.
+     Swap for exact brand hex values if they differ.
+     ============================================================ */
+  :root{
+    --blue-deep: #14304F;
+    --blue: #1E4A73;
+    --blue-bright: #2C6CA8;
+    --silver: #AEB9C4;
+    --silver-line: #DCE1E6;
+    --paper: #FFFFFF;
+    --page-bg: #F4F6F8;
+    --ink: #1B222B;
+    --muted: #64707C;
+    --error: #B3261E;
+    --error-bg: #FCEEEE;
+    --success-bg: #EFF4F1;
+    --success-line: #3B6E56;
+    --font-display: 'Newsreader', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    background: var(--page-bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  .eyebrow{
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin: 0 0 14px;
+  }
+  h1{
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(30px, 5vw, 40px);
+    line-height: 1.14;
+    letter-spacing: -0.005em;
+    margin: 0 0 14px;
+    color: var(--blue-deep);
+  }
+  .sub{
+    font-size: 16.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0 0 32px;
+    max-width: 48ch;
+  }
+  .tabs{
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--silver-line);
+  }
+  .tab{
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 12px 4px;
+    margin-right: 24px;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    cursor: default;
+  }
+  .tab.active{
+    color: var(--blue-deep);
+    border-bottom-color: var(--blue-bright);
+  }
+  form{
+    background: var(--paper);
+    border: 1px solid var(--silver-line);
+    border-radius: 14px;
+    padding: 36px;
+  }
+  @media (max-width: 480px){
+    .wrap{ padding: 40px 16px 64px; }
+    form{ padding: 22px; border-radius: 10px; }
+  }
+  .row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 560px){
+    .row{ grid-template-columns: 1fr; }
+  }
+  .field{ margin-bottom: 22px; }
+  .field label{
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--blue-deep);
+    margin-bottom: 7px;
+  }
+  .field label .opt{ font-weight: 400; color: var(--muted); }
+  .field label .req{ color: var(--blue-bright); margin-left: 2px; }
+  input[type="text"], input[type="email"], input[type="tel"], select, textarea{
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--ink);
+    background: #FFFFFF;
+    border: 1.5px solid var(--silver-line);
+    border-radius: 8px;
+    padding: 12px 14px;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  input::placeholder, textarea::placeholder{ color: #9AA5AF; }
+  input:focus, select:focus, textarea:focus{
+    outline: none;
+    border-color: var(--blue-bright);
+    box-shadow: 0 0 0 3px rgba(44,108,168,0.14);
+  }
+  input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible, .check-row:focus-within{
+    outline: 2px solid var(--blue-bright);
+    outline-offset: 2px;
+  }
+  textarea{ min-height: 110px; resize: vertical; line-height: 1.5; }
+  select{
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%2364707C' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px;
+  }
+  .phone-group{ display:flex; gap: 8px; }
+  .phone-group select{ flex: 0 0 96px; padding-left: 10px; padding-right: 30px; }
+  .phone-group input{ flex: 1; }
+  .hint{ font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+  .err-msg{
+    display:none;
+    font-size: 13px;
+    color: var(--error);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .field.invalid input, .field.invalid select, .field.invalid textarea{
+    border-color: var(--error);
+    background: var(--error-bg);
+  }
+  .field.invalid .err-msg{ display:block; }
+  fieldset{ border: none; margin: 4px 0 26px; padding: 0; }
+  .check-row{
+    display:flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    border-radius: 6px;
+  }
+  .check-row input[type="checkbox"]{
+    margin-top: 3px;
+    width: 17px; height: 17px;
+    accent-color: var(--blue-deep);
+    flex-shrink: 0;
+  }
+  .check-row label{
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .check-row .req{ color: var(--blue-bright); }
+  .submit-btn{
+    width: 100%;
+    background: var(--blue-deep);
+    color: #FFFFFF;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15.5px;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background .15s ease, transform .1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .submit-btn:hover{ background: #0E2338; }
+  .submit-btn:active{ transform: translateY(1px); }
+  .submit-btn:disabled{ opacity: .6; cursor: not-allowed; }
+  .spinner{
+    width: 16px; height: 16px;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+    display: none;
+  }
+  .submit-btn.loading .spinner{ display: inline-block; }
+  .submit-btn.loading .btn-text{ opacity: .85; }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+
+  .next-steps{
+    margin-top: 28px;
+    padding-top: 26px;
+    border-top: 1px solid var(--silver-line);
+  }
+  .next-steps h3{
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    margin: 0 0 14px;
+  }
+  .next-steps ol{
+    list-style: none;
+    margin: 0; padding: 0;
+    counter-reset: steps;
+  }
+  .next-steps li{
+    counter-increment: steps;
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .next-steps li::before{
+    content: counter(steps);
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--silver);
+    color: var(--blue-deep);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .privacy-note{
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-top: 22px;
+    text-align: center;
+  }
+  .privacy-note a{ color: var(--blue-deep); }
+  .form-live-region{ position:absolute; left:-9999px; }
+
+  /* Success state */
+  .success-panel{
+    display:none;
+    background: var(--success-bg);
+    border: 1px solid var(--success-line);
+    border-radius: 14px;
+    padding: 44px 36px;
+    text-align: center;
+  }
+  .success-panel.show{ display:block; }
+  .success-icon{
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--success-line);
+    color: #fff;
+    display: flex; align-items:center; justify-content:center;
+    margin: 0 auto 20px;
+    font-size: 22px;
+  }
+  .success-panel h2{
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--blue-deep);
+    margin: 0 0 10px;
+  }
+  .success-panel p{
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 42ch;
+    margin: 0 auto;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .spinner{ animation: none; }
+    .submit-btn{ transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <p class="eyebrow">Contact &amp; Apply</p>
+  <h1>Start your application.</h1>
+  <p class="sub">Ready to begin? Share your details and programme interests — a dedicated advisor will schedule your consultation within 48 hours.</p>
+
+  <div class="tabs">
+    <span class="tab active">Start Application</span>
+    <span class="tab">General Enquiry</span>
+  </div>
+
+  <form id="applyForm" novalidate>
+    <div class="row">
+      <div class="field" data-field="firstName">
+        <label for="firstName">First name<span class="req">*</span></label>
+        <input type="text" id="firstName" name="firstName" autocomplete="given-name" placeholder="e.g. Ifeoma" />
+        <p class="err-msg">Please enter your first name.</p>
+      </div>
+      <div class="field" data-field="lastName">
+        <label for="lastName">Last name<span class="req">*</span></label>
+        <input type="text" id="lastName" name="lastName" autocomplete="family-name" placeholder="e.g. Okafor" />
+        <p class="err-msg">Please enter your last name.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field" data-field="email">
+        <label for="email">Email<span class="req">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+        <p class="err-msg">Please enter a valid email address.</p>
+      </div>
+      <div class="field" data-field="phone">
+        <label for="phoneNumber">Phone<span class="req">*</span></label>
+        <div class="phone-group">
+          <select id="phoneCode" name="phoneCode" aria-label="Country code">
+            <option value="+234" selected>🇳🇬 +234</option>
+            <option value="+44">🇬🇧 +44</option>
+            <option value="+1">🇺🇸 +1</option>
+            <option value="+233">🇬🇭 +233</option>
+            <option value="+other">Other</option>
+          </select>
+          <input type="tel" id="phoneNumber" name="phoneNumber" autocomplete="tel-national" placeholder="801 234 5678" />
+        </div>
+        <p class="err-msg">Please enter a phone number.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field" data-field="destination">
+        <label for="destination">Destination country<span class="req">*</span></label>
+        <select id="destination" name="destination">
+          <option value="">Select destination</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>Canada</option>
+          <option>Beyond (Europe &amp; other destinations)</option>
+          <option>Not sure yet</option>
+        </select>
+        <p class="err-msg">Please select a destination.</p>
+      </div>
+      <div class="field" data-field="programme">
+        <label for="programme">Programme type<span class="req">*</span></label>
+        <select id="programme" name="programme">
+          <option value="">Select programme</option>
+          <option>Undergraduate Admissions</option>
+          <option>Postgraduate Admissions</option>
+          <option>Top-Up (HND to Bachelor's)</option>
+          <option>Pathway Programmes</option>
+          <option>Transfer Admissions</option>
+          <option>ESL Programmes</option>
+          <option>Short Courses</option>
+          <option>Professional Certifications</option>
+          <option>Study-Abroad Consulting</option>
+          <option>Not sure yet</option>
+        </select>
+        <p class="err-msg">Please select a programme type.</p>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="message">Message <span class="opt">(optional)</span></label>
+      <textarea id="message" name="message" placeholder="Tell us a bit about your academic background and goals — anything that helps your advisor prepare." maxlength="2000"></textarea>
+    </div>
+
+    <fieldset>
+      <div class="check-row" data-field="consent">
+        <input type="checkbox" id="consent" name="consent" />
+        <label for="consent">I agree to be contacted about my application.<span class="req">*</span></label>
+      </div>
+      <p class="err-msg" id="consentErr" style="margin-left:27px;">Please confirm you're happy for us to get in touch.</p>
+      <div class="check-row">
+        <input type="checkbox" id="updates" name="updates" />
+        <label for="updates">Send me occasional updates from HorizonPath Education.</label>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="submit-btn" id="submitBtn">
+      <span class="spinner"></span>
+      <span class="btn-text">Start Your Application</span>
+    </button>
+
+    <div class="next-steps">
+      <h3>What happens next?</h3>
+      <ol>
+        <li>We review your application within 48 hours.</li>
+        <li>A dedicated advisor schedules a free consultation.</li>
+        <li>Together we map your pathway to the right university.</li>
+      </ol>
+    </div>
+
+    <p class="privacy-note">By submitting, you agree to our <a href="/legal/privacy">Privacy policy</a>. We'll only use this to help with your application.</p>
+    <div class="form-live-region" aria-live="polite" id="liveRegion"></div>
+  </form>
+
+  <div class="success-panel" id="successPanel" role="status">
+    <div class="success-icon">✓</div>
+    <h2>Thanks — we've got it.</h2>
+    <p>A dedicated advisor will review your details and reach out within 48 hours to schedule your consultation.</p>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('applyForm');
+  const successPanel = document.getElementById('successPanel');
+  const submitBtn = document.getElementById('submitBtn');
+  const liveRegion = document.getElementById('liveRegion');
+
+  function setFieldError(el, hasError){
+    const field = el.closest('[data-field]');
+    if(!field) return;
+    field.classList.toggle('invalid', hasError);
+  }
+
+  function validate(){
+    let firstInvalid = null;
+    let valid = true;
+
+    const checks = [
+      { el: document.getElementById('firstName'), test: v => v.trim().length > 0 },
+      { el: document.getElementById('lastName'), test: v => v.trim().length > 0 },
+      { el: document.getElementById('email'), test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+      { el: document.getElementById('phoneNumber'), test: v => v.trim().length >= 6 },
+      { el: document.getElementById('destination'), test: v => v.trim().length > 0 },
+      { el: document.getElementById('programme'), test: v => v.trim().length > 0 },
+    ];
+
+    checks.forEach(({el, test}) => {
+      const ok = test(el.value);
+      setFieldError(el, !ok);
+      if(!ok){ valid = false; if(!firstInvalid) firstInvalid = el; }
+    });
+
+    const consentEl = document.getElementById('consent');
+    const consentRow = consentEl.closest('[data-field]');
+    const consentErr = document.getElementById('consentErr');
+    if(!consentEl.checked){
+      consentRow.classList.add('invalid');
+      consentErr.style.display = 'block';
+      valid = false;
+      if(!firstInvalid) firstInvalid = consentEl;
+    } else {
+      consentRow.classList.remove('invalid');
+      consentErr.style.display = 'none';
+    }
+
+    return { valid, firstInvalid };
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const { valid, firstInvalid } = validate();
+
+    if(!valid){
+      liveRegion.textContent = 'There are errors in the form. Please review the highlighted fields.';
+      if(firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+    liveRegion.textContent = 'Sending your application.';
+
+    // MICHAEL: replace this timeout with the real submit call
+    // (e.g. POST to /api/applications or the CRM webhook), then
+    // swap the panels on a successful response.
+    setTimeout(() => {
+      form.style.display = 'none';
+      successPanel.classList.add('show');
+      liveRegion.textContent = "Thanks — we've got it. A dedicated advisor will reach out within 48 hours.";
+    }, 900);
+  });
+</script>
+
+</body>
+</html>

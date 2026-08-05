@@ -7,7 +7,7 @@ import { IcefBadge } from "@/components/sections/icef-badge";
 export const metadata: Metadata = {
   title: "Contact & Apply",
   description:
-    "Start your university application or send a general enquiry to HorizonPath Education. We'll respond within one business day.",
+    "Start your university application or send a general enquiry to HorizonPath Education. A dedicated advisor will respond within 48 hours.",
 };
 
 export default function ContactPage() {
@@ -22,26 +22,6 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.15} className="space-y-8">
-            <div className="rounded-2xl border border-border/60 bg-muted/30 p-6">
-              <h3 className="font-display text-lg font-bold text-ink">
-                What happens next?
-              </h3>
-              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
-                <li className="flex gap-3">
-                  <span className="font-bold text-teal">1.</span>
-                  We review your enquiry within one business day
-                </li>
-                <li className="flex gap-3">
-                  <span className="font-bold text-teal">2.</span>
-                  A dedicated advisor schedules a free consultation
-                </li>
-                <li className="flex gap-3">
-                  <span className="font-bold text-teal">3.</span>
-                  Together we map your pathway to the right university
-                </li>
-              </ol>
-            </div>
-
             <IcefBadge />
 
             <div className="rounded-2xl border border-border/60 bg-card p-6">

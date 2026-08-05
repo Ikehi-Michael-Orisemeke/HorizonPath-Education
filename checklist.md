@@ -1,5 +1,12 @@
 # HorizonPath Education — Checklist
 
+## Contact page — application form
+- [x] Read start-application-form.html fields/flow
+- [x] Map to existing contact form + design system
+- [x] Update form UI to match HTML structure (keep Horizon theme)
+- [x] Wire submit/validation as needed
+- [ ] Review on contact page
+
 ## Programmes page cleanup
 - [x] Remove "Full spectrum" section
 
